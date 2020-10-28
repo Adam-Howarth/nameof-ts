@@ -32,6 +32,28 @@ export function nameof<T extends Object>(nameFunction: ((obj: T) => any) | { new
 		);
 	}
 
+    // ES5 prop selector:
+    // "function (x) { return x.prop; }"
+	const matchRegex = /function\s*\(\w+\)\s*\{[\r\n\s]*return\s+\w+\.((\w+\.)*(\w+))/i;
+	const es5Match = fnStr.match(matchRegex);
+
+	if (es5Match) {
+		return (options && options.lastProp)
+			? es5Match[3]
+			: es5Match[1];
+	}
+
+	// ES5 class name:
+	// "function ClassName() { ..."
+	if (fnStr.startsWith("function ")) {
+		return cleanseAssertionOperators(
+			fnStr.substring(
+				"function ".length,
+				fnStr.indexOf("(")
+			)
+		);
+	}
+
 	// Invalid function.
 	throw new Error("nameof-ts: Invalid function.");
 }
