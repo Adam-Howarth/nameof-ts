@@ -33,5 +33,5 @@ export function nameof<T extends Object>(nameFunction: ((obj: T) => any) | { new
 	}
 
 	// Invalid function.
-	throw new Error("ts-nameof: Invalid function.");
+	throw new Error("nameof-ts: Invalid function.");
 }
