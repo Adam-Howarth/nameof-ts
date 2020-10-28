@@ -8,7 +8,8 @@
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage",
-		"stylelint": "stylelint ./src/** --config ./stylelint.config.json"
+		"stylelint": "stylelint ./src/** --config ./stylelint.config.json",
+		"postversion": "git push && git push --tags && npm publish"
 	},
 	"repository": {
 		"type": "git",
