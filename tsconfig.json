@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"lib": [
+			"es6"
+		],
+		"noImplicitAny": true,
+		"rootDir": ".",
+		"strictNullChecks": true
+	},
+	"include": [
+		"src",
+		"test",
+		"./index.ts"
+	]
+}
