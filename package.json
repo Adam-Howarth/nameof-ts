@@ -9,6 +9,7 @@
 		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage",
 		"stylelint": "stylelint ./src/** --config ./stylelint.config.json",
+		"version": "",
 		"postversion": "git push && git push --tags && npm publish"
 	},
 	"repository": {
