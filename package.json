@@ -1,9 +1,10 @@
 {
 	"name": "nameof-ts",
-	"version": "1.0.0",
+	"version": "1.0.3",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"tsc": "node_modules/.bin/tsc --project \"./tsconfig.prod.json\"",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage",
